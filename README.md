@@ -1,1 +1,1 @@
-This is a website me and 3babda made it is made for Hackers/ coders to share code and upload videos on how to code. 
+This is a website me and 3babda made it is made for Hackers/ coders to share code and upload videos on how to code a safe commumity for coders , ethical and un ethical hackers we just ask be respectful.
