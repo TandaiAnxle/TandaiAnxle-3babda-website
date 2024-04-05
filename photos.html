@@ -1,0 +1,102 @@
+
+ <!--Ok so problem again idk how to do this much I asked Gpt to help me with the Java script-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        #image-container {
+            text-align: center;
+            position: relative;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        #image-preview {
+            max-width: 100%;
+            max-height: 300px;
+        }
+        #delete-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: none;
+        }
+        #file-input {
+            margin-bottom: 10px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(32, 32, 32);">
+    <h1 style="color: white;">Upload Images.</h1>
+
+    
+
+    <div id="image-container">
+        <div id="image-preview"></div>
+    </div>
+    <input type="file" id="file-input" accept="image/*">
+    <button id="delete-btn" class="delete-btn">Delete</button>
+    
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const imagePreview = document.getElementById('image-preview');
+        const deleteBtn = document.getElementById('delete-btn');
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    img.onload = function() {
+                        if (this.width === 500 && this.height === 500) {
+                            imagePreview.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image">`;
+                            deleteBtn.style.display = 'inline-block';
+                            document.body.scrollTop = 0;
+                            document.documentElement.scrollTop = 0;
+                        } else {
+                            alert('Please upload an image with dimensions 500x500.');
+                            fileInput.value = null;
+                        }
+                    };
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.innerHTML = '';
+                deleteBtn.style.display = 'none';
+            }
+        });
+
+        deleteBtn.addEventListener('click', function() {
+            imagePreview.innerHTML = '';
+            deleteBtn.style.display = 'none';
+            fileInput.value = null;
+        });
+    </script>
+    <!--Copyrights make sure it stays at the bottom and for all pages we create please.-->
+ <footer style="color: rgb(255, 255, 255);">Copyright©
+    All rights reserved by Developer Team.
+     TandaiAnxle, 3babda and Raffa3l
+    </footer>
+</body>
+</html>
