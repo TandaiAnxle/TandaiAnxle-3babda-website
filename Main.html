@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+<title>
+    SnapSphere MainPage
+</title>
+
+</head>
+
+
+<body style="background-image: url('AccesDenied.jpg');">
+
+    <center>
+     <h1 style="color: white;">
+        SnapSphere Home.
+     </h1>
+
+     <button onclick="redirectToVideos(event);">Videos</button>
+
+     <script>
+     function redirectToVideos(event) {
+         event.preventDefault(); // Prevents the default behavior (page refresh)
+         window.location.href = 'Video.html'; // Redirects to Videos page
+     }
+     </script>
+     
+     <br>
+     
+     <button onclick="redirectToPhotos(event);">Images/Photos</button>
+     
+     <script>
+     function redirectToPhotos(event) {
+         event.preventDefault(); // Prevents the default behavior (page refresh)
+         window.location.href = 'photos.html'; // Redirects to Photos page
+     }
+     </script>
+     
+     <br>
+     
+     <button onclick="redirectToGuides(event);">Guides</button>
+     
+     <script>
+     function redirectToGuides(event) {
+         event.preventDefault(); // Prevents the default behavior (page refresh)
+         window.location.href = 'CodingGuide.html'; // Redirects to Guides page
+     }
+     </script>
+     
+
+
+         <!--Copyrights make sure it stays at the bottom and for all pages we create please.-->
+         <footer style="color: rgb(255, 255, 255);">Copyright©
+            All rights reserved by Developer Team.
+            TandaiAnxle, 3babda and Raffa3l
+    </footer>
+
+
+
+    </center>
+
+
+            
+
+
+</body>
+
+
+
+</html>
